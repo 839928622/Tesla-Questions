@@ -33,9 +33,11 @@ namespace ConsoleApp2CLI
                 Console.WriteLine($"ConsoleApp2CLI v{versionString}");
                 Console.WriteLine("-------------");
             }
+
+            Validate(args);
         }
 
-     public int Validate(string[] args)
+     public static int Validate(string[] args)
      {
            args = args.Select(s => s.ToLowerInvariant()).ToArray();
             // only one parameter
