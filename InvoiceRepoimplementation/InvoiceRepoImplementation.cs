@@ -85,9 +85,9 @@ namespace InvoiceRepoImplementation
 
             }
 
-            // form != null
+            // the rest part which is  form != null 
 
-
+            // to == null
             if (  to != null)
             {
                 var dic2 = new Dictionary<string, long>();
@@ -105,7 +105,7 @@ namespace InvoiceRepoImplementation
             // to == null
            
                 var dic3 = new Dictionary<string, long>();
-                var data3 = _incoices.Where(x => x.CreationDate >= from.Value && x.CreationDate <= to.Value)
+                var data3 = _incoices.Where(x => x.CreationDate >= from.Value)
                     .SelectMany(x => x.InvoiceItems)
                     .Select(x => new { x.Count, x.Name }).ToList();
 
